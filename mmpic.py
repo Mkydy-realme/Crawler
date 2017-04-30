@@ -89,15 +89,14 @@ for i in range(1,pages+1):
                 html=requests.get(pic,headers = headers)
                 mess=BeautifulSoup(html.text,'lxml')
                 pic_url=mess.find('img')           #每张图片的链接
-                print(pic_url)
+                #print(pic_url)
                 #picsrc=pic_url['src']
-                '''
+                
                 html=requests.get(pic_url['src'],headers=headers)
                 file_name = pic_url['src'].split(r'/')[-1]
                 f = open(file_name, 'wb')
                 f.write(html.content)
                 f.close()
-            '''
             print('完成')
     print('第',i,'几页完成')
 
